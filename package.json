@@ -8,7 +8,8 @@
     "build": "set NODE_OPTIONS=--openssl-legacy-provider && build-storybook -o docs",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "set NODE_OPTIONS=--openssl-legacy-provider && npx chromatic --project-token=9852eea2cfc7"
   },
   "dependencies": {
     "http-server": "^14.1.1",
@@ -29,9 +30,12 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.17.2",
     "css-loader": "^6.7.3",
     "postcss": "^8.4.21",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "my-storybook@0.0.0"
 }
