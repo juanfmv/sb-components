@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "set NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && build-storybook",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && build-storybook -o docs",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
