@@ -7,4 +7,4 @@ yarn add jfmv-my-storybook-components
 ```
 
 ### Demo:
-[Storyboook Components](https://juanfmv.github.io/sb-components/?path=/story/ui-mylabel--basic) 
+[Storybook Components](https://juanfmv.github.io/sb-components/?path=/story/ui-mylabel--basic) 
