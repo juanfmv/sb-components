@@ -1,15 +1,38 @@
 {
-  "name": "my-storybook",
-  "private": true,
-  "version": "0.0.0",
+  "name": "jf-my-storybook-components",
+  "private": false,
+  "version": "0.1.0",
+  "license": "MIT",
+  "typings": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "homepage": "https://github.com/juanfmv",
+  "repository": {
+    "url": "https://github.com/juanfmv/sb-components",
+    "type": "git"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "typescript": ">=4.0.0"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "type": "module",
   "scripts": {
     "dev": "set NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && build-storybook -o docs",
+    "build": "yarn clean && tsc && yarn copy-files",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "set NODE_OPTIONS=--openssl-legacy-provider && npx chromatic --project-token=9852eea2cfc7"
+    "chromatic": "set NODE_OPTIONS=--openssl-legacy-provider && npx chromatic --project-token=9852eea2cfc7",
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.css dist/"
   },
   "dependencies": {
     "http-server": "^14.1.1",
@@ -31,11 +54,22 @@
     "@vitejs/plugin-react-swc": "^3.0.0",
     "babel-loader": "^8.3.0",
     "chromatic": "^6.17.2",
+    "copyfiles": "^2.4.1",
     "css-loader": "^6.7.3",
     "postcss": "^8.4.21",
+    "rimraf": "^4.4.1",
+    "semantic-release": "^21.0.0",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
   },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ],
   "readme": "ERROR: No README data found!",
   "_id": "my-storybook@0.0.0"
 }

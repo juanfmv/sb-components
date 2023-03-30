@@ -1,5 +1,5 @@
+/// <reference types="react" />
 import './mylabel.css';
-
 export interface MyLabelProps {
     /**
      * Este es el mensaje a mostrar en la etiqueta
@@ -8,7 +8,7 @@ export interface MyLabelProps {
     /**
      * Este es el tamaño de la etiqueta
      */
-    size: 'normal'|'h1'|'h2'|'h3';
+    size: 'normal' | 'h1' | 'h2' | 'h3';
     /**
      * Si quiere todo capitalizado
      */
@@ -16,7 +16,7 @@ export interface MyLabelProps {
     /**
      * Este es el color de la etiqueta
      */
-    color?: 'primary'|'secondary'|'tertiary';
+    color?: 'primary' | 'secondary' | 'tertiary';
     /**
      * Color personalizado de la fuente
      */
@@ -26,21 +26,7 @@ export interface MyLabelProps {
      */
     backgroundColor?: string;
 }
-
 /**
  * Primary UI component for user interaction
  */
-export const MyLabel = ({
-    allCaps = false,
-    color = 'primary',
-    label = 'No Label',
-    size = 'normal',
-    fontColor,
-    backgroundColor = 'transparent'
-}:MyLabelProps) => {
-  return (
-    <span className={`label ${size} text-${color}`} style={{ color:fontColor, backgroundColor }}>
-      {allCaps ? label.toUpperCase() : label }
-    </span>
-  )
-}
+export declare const MyLabel: ({ allCaps, color, label, size, fontColor, backgroundColor }: MyLabelProps) => JSX.Element;
